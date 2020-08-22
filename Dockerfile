@@ -1,8 +1,8 @@
-FROM jenkins/jenkins:lts
+FROM jenkins/jenkins
 
 ENV JENKINS_USER admin
 ENV JENKINS_PASS admin
-ENV JENKINS_UC_DOWNLOAD http://updates.jenkins-ci.org/download/
+ENV JENKINS_UC_DOWNLOAD http://ftp-nyc.osuosl.org/pub/jenkins	
 ENV CASC_JENKINS_CONFIG /usr/share/jenkins/ref/jenkins.yml
 # Skip initial setup
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
