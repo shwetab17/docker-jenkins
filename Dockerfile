@@ -9,7 +9,7 @@ ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 
 
 COPY jenkins.yml /usr/share/jenkins/ref/jenkins.yml
-
+RUN chown jenkins:jenkins /usr/share/jenkins/ref/jenkins.yml
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 
 USER root
