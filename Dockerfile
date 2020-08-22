@@ -10,10 +10,12 @@ ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 COPY jenkins.yml /usr/share/jenkins/ref/jenkins.yml
 
 COPY plugins.txt /usr/share/jenkins/plugins.txt
+
+USER root
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/plugins.txt
 
 
-USER root
+#USER root
 RUN apt-get update \
     && apt-get install -qqy apt-transport-https ca-certificates curl gnupg2 software-properties-common 
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
