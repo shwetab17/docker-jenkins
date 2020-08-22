@@ -2,7 +2,7 @@ FROM jenkins/jenkins
 
 ENV JENKINS_USER admin
 ENV JENKINS_PASS admin
-ENV JENKINS_UC_DOWNLOAD https://archives.jenkins-ci.org/
+ENV JENKINS_UC_DOWNLOAD http://archives.jenkins-ci.org/
 ENV CASC_JENKINS_CONFIG /usr/share/jenkins/ref/jenkins.yml
 # Skip initial setup
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
