@@ -40,7 +40,7 @@ environment {
                    /*  sh 'ls /var/jenkins_home/plugins | grep "role-strategy$"'  
                     sh 'ls $JENKINS_HOME/plugins/'*/
                    /* sh 'cat $JENKINS_HOME/config.xml | grep -i deployer'*/ 
-            sh 'echo Docker image Validated! Role based plgins installed & Users configured! . . . .'
+            sh 'echo Docker image Validated! Role based plugins installed and Users configured! . . . .'
         }
             }
             }
