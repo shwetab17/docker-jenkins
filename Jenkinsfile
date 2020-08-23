@@ -25,10 +25,10 @@ environment {
             /*dockerImage.inside("-u root --entrypoint='/bin/bash'") { */
             dockerImage.withRun {c ->
                 sh "docker logs ${c.id}"
-               plugin_status = sh "sleep 40 && if docker exec ${c.id} ls -lt /var/jenkins_home/plugins/role-strategy > /dev/nul;then echo Success; else echo Failure; fi"
+               plugin_status = sh "sleep 40 && if docker exec ${c.id} ls -lt /var/jenkins_home/plugins/role-strategy;then echo Success; else echo Failure; fi"
                println(plugin_status)
                
-               role_status = sh "sleep 40 && if docker exec ${c.id} cat /var/jenkins_home/config.xml | grep -i deployer > /dev/nul; then echo Success; else echo Failure; fi"
+               role_status = sh "sleep 40 && if docker exec ${c.id} cat /var/jenkins_home/config.xml | grep -i deployer; then echo Success; else echo Failure; fi"
                println(role_status)
                
               if ( plugin_status == Failure && role_status == Failure )
