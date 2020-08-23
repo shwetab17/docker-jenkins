@@ -10,14 +10,6 @@ environment {
  agent any
  
   stages {
-        stage('Git Clone') {
-          steps {
-            git branch: 'master',
-            credentialsId: '8a43487f-3ead-45ad-85c9-cfdb1bf4e923',
-            url: 'https://github.com/shwetab17/docker-jenkins.git'
-            sh 'echo Latest Code fetched . . . .'
-          }
-        }
         stage('Build image') {
           steps{
             script {
