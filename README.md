@@ -1,5 +1,7 @@
 # docker-jenkins
 
+
+
 This project provides necessary config files to create docker images for jenkins with pre-installed role-based startegy plugin, validates few test cases and deploy the containers on remote node as docker service. 
 
 Nodes involved:
