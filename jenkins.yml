@@ -11,22 +11,29 @@ jenkins:
             assignments:
               - "admin"
           - name: "Deployer"
-            description: "Jenkins administrators"
-            permissions:
-              - "Overall/Administer"
-            assignments:
-              - "admin"
-          - name: "Prod-deployer"
-            description: "Jenkins administrators"
-            permissions:
-              - "Overall/Administer"
-            assignments:
-              - "admin"
-          - name: "Readonly"
-            description: "Read-only users"
+            description: "All except prod env deployer"
             permissions:
               - "Overall/Read"
+              - "Agent/Build"
+              - "Agent/Read"
+              - "Agent/Cancel"
               - "Job/Read"
+              - "Job/Build"
+              - "Job/Cancel"
+              - "View/Read"
+            assignments:
+              - "authenticated"
+          - name: "Prod-deployer"
+            description: "Production env deployer"
+            permissions:
+              - "Overall/Read"
+              - "Agent/Build"
+              - "Agent/Read"
+              - "Agent/Cancel"
+              - "Job/Read"
+              - "Job/Build"
+              - "Job/Cancel"
+              - "View/Read"
             assignments:
               - "authenticated"
           - name: "Developer"
