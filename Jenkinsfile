@@ -72,8 +72,8 @@ pipeline {
 }
     post {
         success {
-            echo 'App deployment is successful. . . .'
-				}
+       		     echo 'App deployment is successful. . . .'
+		     echo 'You can check your latest deployed app on https://jenkins.shweta.host/ . . . '  }
 		}
 
 }
